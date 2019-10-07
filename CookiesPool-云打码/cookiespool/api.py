@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return '<h2>Welcome to Cookie Pool System</h2>'
+    return '<h2>cookies启动成功！</h2>'
 
 
 def get_conn():
@@ -35,6 +35,7 @@ def random(name):
     g = get_conn()
     cookies = getattr(g, name + '_cookies').random()
     return cookies
+
 
 @app.route('/<name>/add/<username>/<password>')
 def add(name, username, password):
